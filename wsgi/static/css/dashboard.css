@@ -103,3 +103,10 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+footer{
+    width:100%;
+    min-height:20px;
+    color: #fff;    
+    background-color: #428bca; /* This color gets inverted color or you can add navbar inverse class in html */
+}
