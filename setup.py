@@ -6,7 +6,7 @@ setup(
     # GETTING-STARTED: set your app name:
     name='nonilnil',
     # GETTING-STARTED: set your app version:
-    version='1.0',
+    version='1.02',
     # GETTING-STARTED: set your app description:
     description='nonilnil OpenShift App',
     # GETTING-STARTED: set author name (your name):
