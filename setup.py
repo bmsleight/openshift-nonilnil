@@ -20,7 +20,7 @@ setup(
         'Django==1.8.4',
         'django-mailgun==0.8.0',
         'django-registration-redux==1.2',
-        'requests==2.9.1',
+        'requests',
         'six==1.10.0',
     ],
     dependency_links=[
