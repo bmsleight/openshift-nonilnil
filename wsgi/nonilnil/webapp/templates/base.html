@@ -1,0 +1,126 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="NoNilNil.com - Avoiding the games with no goals">
+    <meta name="author" content="NoNilNil.com - Avoiding the games with no goals">
+    <link rel="icon" href="{% static "favicon/favicon.ico" %}">
+
+    <title>NoNilNil.com - Avoiding the games with no goals</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{% static "css/ie10-viewport-bug-workaround.css" %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "css/dashboard.css" %}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+<!--          <a class="navbar-brand" href="/">NoNilNil.com</a> -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+<!--
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+-->
+            <li><a href="/sidemenu/">Navigation for mobiles & tablets</a></li>
+            {% if user.is_staff %}
+                <li><a href="{% url 'admin:index' %}">Admin</a></li>
+            {% endif %}
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'auth_password_change' %}">Change Password</a></li> <!-- 'auth_password_change' -->
+                <li><a href="{% url 'auth_logout' %}">Log out</a></li> <!-- auth_login --> <!-- 'auth_logout' -->
+            {% else %}
+                <li><a href="{% url 'registration_register' %}">Register - to play</a></li> <!-- registration_register -->
+                <li><a href="{% url 'auth_login' %}">Login</a></li> <!-- auth_login --> <!-- 'auth_logout' -->
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+<!--            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li> -->
+            <li><a href="/"><img src={% static "images/logo.png" %} alt="NoNilNil.com" style="width:200px"></a></li>
+            <li><a href="{% url 'series_list' %}">View NoNilNil Games</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="/about/" target="_blank">About</a></li>
+            <li><a href="https://github.com/bmsleight/nonilnil" target="_blank">Source Code</a></li>
+            <li><a href="https://twitter.com/nonilnil" target="_blank">NoNilNil on Twitter</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="/rules/">Rules</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+        {% block content %}{% endblock content %}
+
+        </div>
+      </div>
+    </div>
+
+
+<footer class="footer navbar-fixed-bottom">
+     <div class="container">
+        <p><small>NoNilNil.com -  "If any one of my players isn’t interfering with play, they’re not getting paid."  - Brian Clough</small></p>
+     </div>
+</footer>
+
+
+
+<!--
+    <footer class="footer">
+        <small>For mobile or tablet use the black and white button at top right to view the side menu</small>  
+
+        <p class="text-muted">"If any one of my players isn’t interfering with play, they’re not getting paid." <cite title="Source Title">Brian Clough</cite></p>
+    </footer>
+-->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="{% static "js/holder.min.js" %}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
