@@ -19,7 +19,7 @@ setup(
     install_requires=[
         'Django==1.8.4',
         'django-mailgun==0.8.0',
-        'django-registration-redux==1.2',
+        'django-registration-redux',
         'requests',
         'six==1.10.0',
     ],
