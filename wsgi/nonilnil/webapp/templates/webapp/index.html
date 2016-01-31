@@ -31,7 +31,7 @@
             {% if serie.spectators %}
                 <h5>The following people are spectators of the show, (not paid, not predicted)</h5>
                 {% for p in serie.spectators %}
-                    <ul><li>{{ p.username }}</li></ul>
+                    <ul><li>{{ p.username }} {% for medal in p.user.medal_set.all %}{{ medal.tag|medal_icon }}{% endfor %}</li></ul>
                 {% endfor %}
             {% endif %}
         {% endif %}

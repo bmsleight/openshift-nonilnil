@@ -10,21 +10,21 @@ def medal_icon(text, autoescape=True):
     if  text == "Silver":
         return mark_safe("<i class='fa fa-soccer-ball-o fa-1x' style='color:silver'></i>")
     if  text == "Bronze":
-        return mark_safe("<i class='fa fa-soccer-ball-o fa-1x' style='color:bronze'></i>")
+        return mark_safe("<i class='fa fa-soccer-ball-o fa-1x' style='color:#CD7F32'></i>")
     if  text == "Every":
         return mark_safe("<i class='fa fa-sort-alpha-as fa-1x' style='color:bronze'></i>")
     if  text == "90":
-        return mark_safe("<i class='fa fa-hourglass-3 fa-1x' style='color:black'></i>")
+        return mark_safe("<i class='fa fa-hourglass-3 fa-1x' style='color:LightGreen'></i>")
     if  text == "TopGoal":
-        return mark_safe("<i class='fa fa-chevron-circle-up fa-1x' style='color:black'></i>")
+        return mark_safe("<i class='fa fa-chevron-circle-up fa-1x' style='color:LightGreen'></i>")
     if  text == "AFC":
-        return mark_safe("<i class='fa fa-soccer-ball-o fa-1x' style='color:blue; background-color:yellow'></i>")
+        return mark_safe("<i class='fa fa-soccer-ball-o fa-1x fa-spin' style='color:blue; background-color:yellow'></i>")
     if  text == "Bomb":
-        return mark_safe("<i class='fa fa-bomb fa-1x' style='color:black'></i>")
+        return mark_safe("<i class='fa fa-bomb fa-1x' style='color:MediumOrchid'></i>")
     if  text == "Warning":
-        return mark_safe("<i class='fa fa-warning fa-1x' style='color:black'></i>")
+        return mark_safe("<i class='fa fa-warning fa-1x' style='color:MediumOrchid'></i>")
     if  text == "Postpone":
-        return mark_safe("<i class='fa fa-umbrella fa-1x' style='color:black'></i>")
+        return mark_safe("<i class='fa fa-umbrella fa-1x' style='color:MediumOrchid'></i>")
     if  text == "Twitter":
         return mark_safe("<i class='fa fa-twitter fa-1x' style='color:blue'></i>")
     if  text == "Group":

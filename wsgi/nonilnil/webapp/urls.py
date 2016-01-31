@@ -9,6 +9,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.series_list, name='series_list'),
+    url(r'^medals/$', views.medals_list, name='medals_list'),
     url(r'^(?P<pk>[0-9]+)/$', views.series_detail, name='series_detail'),
     url(r'^(?P<s_pk>[0-9]+)/(?P<r_pk>[0-9]+)/prediction/$', views.manage_prediction, name='manage_prediction'),
     url(r'^(?P<pk>[0-9]+)/l/$', views.loser_detail, name='loser_detail'),

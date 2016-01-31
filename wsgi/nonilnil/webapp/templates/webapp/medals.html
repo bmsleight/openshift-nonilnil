@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load webapp_tags %}
+
+{% block content %}
+<h3> Medals </h3>
+  <p> It is possible to accuminate some medals next to your user name, including just like the world cup the converted gold star.</p>
+    </br>
+    <h4>Winners</h4>
+    <p>{{'Gold'|medal_icon }} Gold - Winning a series</p>
+    <p>{{'Silver'|medal_icon }} Silver - Comming 2nd</p>
+    <p>{{'Bronze'|medal_icon }} Bronze - 3rd in a series</p>
+    </br>
+    <h4>The Special One</h4>
+    <p>{{'90'|medal_icon }} 90 - Goal in time added on (not extra time) to avoid nil nil</p>
+    <p>{{'TopGoal'|medal_icon }} TopGoal - Picked the game out of all the possible games with the highest number of goals</p>
+    <p>{{'AFC'|medal_icon }} AFC - Picked AFC Wimbledon in a game they won</p>
+    </br>
+    <h4>Bad luck stories</h4>
+    <p>{{'Bomb'|medal_icon }} Bomb - Out in the first week</p>
+    <p>{{'Warning'|medal_icon }} Warning - Lost because of a rule volalation</p>
+    <p>{{'Postpone'|medal_icon }} Postpone - Lost becasue of a postponed game</p>
+    </br>
+    <h4>Even if you are out of a series, you can still pick up the Blue medals. </h4>
+    <p>{{'Twitter'|medal_icon }} Twitter - Followed <a href='https://twitter.com/nonilnil'>@NoNilNil</a> on twitter</p>
+    <p>{{'Group'|medal_icon }} Group - Introduced NoNilNil, to someone outside of TI</p>
+    <p>{{'Globe'|medal_icon }} Globe - Introduced NoNilNil, to someone outside of the UK</p>
+
+<h3> The Role of Honour </h3>
+{% if medals %}
+    {% for medal in medals  %}
+        <p>{{ medal.tag|medal_icon }} User:{{ medal.user }} on {{ medal.medal_date }}, - {{ medal.description }}</p>
+    {% endfor %}
+{% endif %}
+
+<p>To claim a medal or to make a suggestion for new medal email the support email address at NoNilNil.com.</p>
+</br>
+{% endblock %}

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load webapp_tags %}
 
 {% block content %}
 
@@ -40,7 +41,7 @@
                 <div class="panel-heading"><h4 class="panel-title">{{ round.round_date }} - Round Closed</h4></div>
                 <div class="panel-body">
                 {% for prediction in round.prediction_set.all %}
-                    <ul><li>{{ prediction.user }}, picked {{ prediction.team }}, which {{ prediction.failed|yesno:"was Nil Nil!,had a goal,maybe - just maybe" }}</li></ul>
+                    <ul><li>{{ prediction.user }}{% for medal in prediction.user.medal_set.all %} {{ medal.tag|medal_icon }}{% endfor %} picked {{ prediction.team }}, which {% if prediction.failed %}was Nil Nil! <i class="fa fa-ban text-danger"></i>{% else %}had a goal{% endif %}</li></ul>
                 {% endfor %}
             {% endif %}
             {% if user.is_staff %}

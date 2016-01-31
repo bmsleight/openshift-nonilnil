@@ -11,6 +11,7 @@ from .models import Series
 from .models import Round
 from .models import Prediction
 from .models import Nilnils
+from .models import Medal
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
@@ -27,6 +28,11 @@ def series_list(request):
     series = Series.objects.order_by('-id')
     context = {'series': series}
     return render(request, 'webapp/index.html', context)
+
+def medals_list(request):
+    medals = Medal.objects.order_by('medal_date','id')
+    context = {'medals': medals}
+    return render(request, 'webapp/medals.html', context)
 
 def series_detail(request, pk):
     series = get_object_or_404(Series, id=pk)
