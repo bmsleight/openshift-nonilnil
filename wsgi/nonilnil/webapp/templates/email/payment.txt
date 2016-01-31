@@ -1,7 +1,8 @@
 {{ message }}
 
 Sincerely, 
-nonilnil.com
+support@nonilnil.com
+https://www.nonilnil.com/
 
 ************************************************************************
 ************************************************************************
@@ -17,7 +18,7 @@ If you no longer wish to receive email (i.e. unsubscribe)
 This email was sent to user: {{ user.username }} 
          with email address: {{ user.email }}
 
-Rules must be obeyed- http://nonilnil.com/rules/
+Rules must be obeyed- https://www.nonilnil.com/rules/
 Something wrong, missing or needs improving ? 
  - Sent a tweet to @NoNilNil or email support@nonilnil.com
 
